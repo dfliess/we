@@ -45,9 +45,9 @@ All code must pass `{linter}`. Rules are in `{config file}`. Write compliant cod
 
 Read [CONTEXT.md](./CONTEXT.md) before writing code. Use the terms defined there.
 
-## Testing
+## Testing — TDD
 
-Tests first. Write the failing test, make it pass, then refactor.
+Follow TDD: write a failing test first, make it pass, then refactor. Don't write implementation code without a failing test driving it.
 
 ## Architecture rules
 
