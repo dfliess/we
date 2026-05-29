@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    {
+      "name": "we",
+      "description": "Team engineering workflow — domain modeling, architecture decisions, and shared practices",
+      "source": {
+        "source": "github",
+        "repo": "dfliess/we",
+        "path": "."
+      }
+    }
+  ]
+}
