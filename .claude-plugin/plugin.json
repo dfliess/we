@@ -2,7 +2,9 @@
   "name": "we",
   "description": "Team engineering workflow — domain modeling, architecture decisions, and shared practices",
   "version": "0.1.0",
-  "author": "dfliess",
+  "author": {
+    "name": "dfliess"
+  },
   "repository": "https://github.com/dfliess/we",
   "license": "MIT"
 }
