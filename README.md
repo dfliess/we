@@ -23,8 +23,11 @@ Everything else — code review, testing, deployment — Claude Code already doe
 
 ## Install
 
-```bash
-/plugin install we@dfliess/we
+In Claude Code:
+
+```
+/plugin marketplace add dfliess/we
+/plugin install we
 ```
 
 ## Workflow
