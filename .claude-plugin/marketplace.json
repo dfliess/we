@@ -1,4 +1,9 @@
 {
+  "name": "we",
+  "owner": {
+    "name": "dfliess",
+    "url": "https://github.com/dfliess"
+  },
   "plugins": [
     {
       "name": "we",
