@@ -45,6 +45,10 @@ All code must pass `{linter}`. Rules are in `{config file}`. Write compliant cod
 
 Read [CONTEXT.md](./CONTEXT.md) before writing code. Use the terms defined there.
 
+## Testing
+
+Tests first. Write the failing test, make it pass, then refactor.
+
 ## Architecture rules
 
 {3-5 brief rules specific to this project's structure}
