@@ -22,6 +22,14 @@ Everything else — code review, testing, deployment — Claude Code already doe
 | `/we:setup` | Initializes a new project with CLAUDE.md, CONTEXT.md, ruff config, and pre-commit hooks. One-time setup that establishes the team standard. |
 | `/we:onboard` | Interactive onboarding session. Brings a new engineer up to speed on the domain language, ADRs, and code — tailored to their task. Surfaces doc gaps as it goes. |
 
+## Commands
+
+Skills are interactive; commands are one-shot. When a job has no back-and-forth, it's a command, not a skill.
+
+| Command | What it does |
+|---|---|
+| `/we:handoff` | Compacts the current conversation into a handoff doc so a fresh agent — or a teammate — can pick the work up. References existing artifacts by path instead of restating them; redacts secrets. |
+
 ## Install
 
 In Claude Code:

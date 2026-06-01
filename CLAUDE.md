@@ -1,6 +1,6 @@
 # we plugin
 
-Claude Code plugin for team engineering workflow. Three skills: `/we:grill` (domain modeling), `/we:setup` (project initialization), and `/we:onboard` (new-engineer onboarding).
+Claude Code plugin for team engineering workflow. Three skills: `/we:grill` (domain modeling), `/we:setup` (project initialization), and `/we:onboard` (new-engineer onboarding). One command: `/we:handoff` (session handoff doc).
 
 ## Structure
 
@@ -14,6 +14,8 @@ skills/
 │   └── SKILL.md
 └── onboard/        # New-engineer onboarding
     └── SKILL.md
+commands/
+└── handoff.md      # Session handoff doc (one-shot, not interactive → command, not skill)
 ```
 
 ## Rules
