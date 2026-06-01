@@ -92,3 +92,14 @@ Most "AI workflow" tools fail by adding complexity. A team with 20 custom skills
 The rule: if CLAUDE.md instructions can do it, skip the skill. Skills exist for interactive workflows that need back-and-forth (like domain modeling), not for things the AI can follow from a one-liner.
 
 Built-in Claude Code features already cover: code review (`/code-review`), debugging (`/debug`), simplification (`/simplify`), and batch operations (`/batch`). We don't duplicate them.
+
+## Marketplace — under investigation
+
+Third-party tools we're evaluating to curate into this marketplace. **Not endorsed or bundled yet** — pointers only, pending a decision on whether to wrap them as `we` plugins or leave them as recommendations. Neither is a Claude Code plugin today (Taste is a SKILL, Context7 is an MCP server), so each would need a thin wrapper to be installable here.
+
+| Candidate | Fills | Status | Notes |
+|---|---|---|---|
+| [Taste](https://www.tasteskill.dev/) ([repo](https://github.com/Leonxlnx/taste-skill)) | Frontend design quality (anti-slop layout/typography/motion) | 🔍 To investigate | SKILL.md, not a plugin. Richer than the official `frontend-design`. Star candidate since we do real UI. Install today: `npx skills add https://github.com/Leonxlnx/taste-skill` |
+| [Context7](https://context7.com/) | Up-to-date library docs in context (fewer API hallucinations) | 🔍 To investigate | MCP server, not a plugin. Universally useful, doesn't duplicate built-ins. MCPs change fast — leaning toward keeping this a pointer, not a wrapper. |
+
+Deliberately **not** added (already built-in or official, would be bloat): `code-review`, `frontend-design`, `security-guidance`, `feature-dev`, `pr-review-toolkit`.
