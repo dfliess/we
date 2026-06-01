@@ -20,6 +20,7 @@ Everything else — code review, testing, deployment — Claude Code already doe
 |---|---|
 | `/we:grill` | Domain modeling session. Challenges your plan, sharpens terminology, creates/updates CONTEXT.md and ADRs as decisions crystallise. |
 | `/we:setup` | Initializes a new project with CLAUDE.md, CONTEXT.md, ruff config, and pre-commit hooks. One-time setup that establishes the team standard. |
+| `/we:onboard` | Interactive onboarding session. Brings a new engineer up to speed on the domain language, ADRs, and code — tailored to their task. Surfaces doc gaps as it goes. |
 
 ## Install
 
