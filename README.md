@@ -104,11 +104,12 @@ Built-in Claude Code features already cover: code review (`/code-review`), debug
 
 ## Marketplace — under investigation
 
-Third-party tools we're evaluating to curate into this marketplace. **Not endorsed or bundled yet** — pointers only, pending a decision on whether to wrap them as `we` plugins or leave them as recommendations. Neither is a Claude Code plugin today (Taste is a SKILL, Context7 is an MCP server), so each would need a thin wrapper to be installable here.
+Third-party tools we're evaluating to curate into this marketplace. **Not endorsed or bundled yet** — pointers only, pending a decision on whether to wrap them as `we` plugins or leave them as recommendations. Of these, only Open Code Review is already a Claude Code plugin (installable directly); Taste is a SKILL and Context7 is an MCP server, so those two would need a thin wrapper to be installable here.
 
 | Candidate | Fills | Status | Notes |
 |---|---|---|---|
 | [Taste](https://www.tasteskill.dev/) ([repo](https://github.com/Leonxlnx/taste-skill)) | Frontend design quality (anti-slop layout/typography/motion) | 🔍 To investigate | SKILL.md, not a plugin. Richer than the official `frontend-design`. Star candidate since we do real UI. Install today: `npx skills add https://github.com/Leonxlnx/taste-skill` |
 | [Context7](https://context7.com/) | Up-to-date library docs in context (fewer API hallucinations) | 🔍 To investigate | MCP server, not a plugin. Universally useful, doesn't duplicate built-ins. MCPs change fast — leaning toward keeping this a pointer, not a wrapper. |
+| [Open Code Review](https://github.com/alibaba/open-code-review) | Code review on **large** changesets — deterministic file-bundling + line-level precision | 🔍 To investigate | Already a Claude Code plugin (`/open-code-review:review`), multi-LLM, battle-tested at Alibaba, CI-ready. Niche vs built-in `/code-review`: big PRs + position accuracy. Curate only if the built-in falls short there. |
 
 Deliberately **not** added (already built-in or official, would be bloat): `code-review`, `frontend-design`, `security-guidance`, `feature-dev`, `pr-review-toolkit`.
