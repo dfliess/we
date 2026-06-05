@@ -41,6 +41,10 @@ Keep it under one screen. Structure:
 
 All code must pass `{linter}`. Rules are in `{config file}`. Write compliant code from the start.
 
+## Commits
+
+Follow [Conventional Commits](https://www.conventionalcommits.org) — `type(scope): summary`. Enforced by commitlint; don't restate the rules here.
+
 ## Domain
 
 Read [CONTEXT.md](./CONTEXT.md) before writing code. Use the terms defined there.
@@ -80,6 +84,8 @@ Use the format from [CONTEXT-FORMAT.md](../grill/CONTEXT-FORMAT.md). Start empty
 
 ## Linter config
 
+Detect the project's language first, then use its canonical linter/formatter. Python and TypeScript below are worked examples of the *pattern* (config file + pre-commit hook) — apply the same shape to whatever language the repo is in.
+
 ### Python (ruff in pyproject.toml)
 
 ```toml
@@ -103,11 +109,24 @@ select = ["E", "W", "F", "I", "UP", "B", "SIM", "RUF"]
 
 Adapt to the project's existing setup. Don't force a linter change if one is already configured.
 
+**Other languages** — use the de-facto standard for the detected language, wired the same way (config file + a pre-commit hook):
+
+| Language | Linter / formatter |
+|---|---|
+| Go | `gofmt` + `golangci-lint` |
+| Rust | `rustfmt` + `clippy` |
+| PHP | `php-cs-fixer` + `phpstan` |
+| Ruby | `rubocop` |
+| Java / Kotlin | `spotless` (+ `ktlint`) |
+
+If it's not listed, pick the language's canonical tool — don't invent one.
+
 ## Pre-commit config
 
 ### Python
 
 ```yaml
+default_install_hook_types: [pre-commit, commit-msg]
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.9.0
@@ -115,18 +134,41 @@ repos:
       - id: ruff
         args: [--fix]
       - id: ruff-format
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.20.0
+    hooks:
+      - id: commitlint
+        stages: [commit-msg]
+        additional_dependencies: ["@commitlint/config-conventional"]
 ```
 
 ### TypeScript
 
 ```yaml
+default_install_hook_types: [pre-commit, commit-msg]
 repos:
   - repo: https://github.com/biomejs/pre-commit
     rev: v0.6.1
     hooks:
       - id: biome-check
         additional_dependencies: ["@biomejs/biome@1.9.0"]
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v9.20.0
+    hooks:
+      - id: commitlint
+        stages: [commit-msg]
+        additional_dependencies: ["@commitlint/config-conventional"]
 ```
+
+## Commit convention (commitlint)
+
+Both pre-commit templates above enforce [Conventional Commits](https://www.conventionalcommits.org) on the `commit-msg` hook. Add a `.commitlintrc.yaml` at the repo root:
+
+```yaml
+extends: ["@commitlint/config-conventional"]
+```
+
+Include this for **every project regardless of language** (pre-commit runs commitlint in isolation). `default_install_hook_types` wires the `commit-msg` hook automatically; if pre-commit was already installed, run `pre-commit install --install-hooks` once to register the commit-msg stage.
 
 ## What NOT to create
 
