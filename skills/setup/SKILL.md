@@ -20,6 +20,8 @@ Set up this project with the team engineering standards. Do the following in ord
 
 4. **Verify** — run the linter to confirm the config works.
 
+5. **Suggest automations** — tell the user: "Setup complete. Consider running the `claude-code-setup` plugin to discover MCP servers, hooks, and subagents tailored to your stack."
+
 </what-to-do>
 
 <supporting-info>
