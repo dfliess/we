@@ -51,6 +51,10 @@ Follow [Conventional Commits](https://www.conventionalcommits.org) — `type(sco
 
 Read [CONTEXT.md](./CONTEXT.md) before writing code. Use the terms defined there.
 
+## Tracking
+
+Work lives in GitHub Issues + kanban (via the GitHub MCP or `gh`), not in the repo. An issue is the *what* (user story + acceptance criteria); the agent's plan to fulfil it is ephemeral (plan mode), traces to the issue, and never goes on the board. One issue → one branch → a PR that closes it.
+
 ## Testing — TDD
 
 Follow TDD: write a failing test first, make it pass, then refactor. Don't write implementation code without a failing test driving it.

@@ -76,6 +76,20 @@ No special skills needed. A well-written CLAUDE.md is enough:
 - Code review → use built-in `/code-review`
 - Debugging → use built-in `/debug`
 
+### Tracking work — issues vs agent tasks
+
+Two levels, kept separate (the spec-driven pattern: a spec/issue is the *what*; the agent's task list is the *how*):
+
+| Level | What it is | Where it lives | Persistent? |
+|---|---|---|---|
+| **Issue / user story** | what + why + acceptance criteria | GitHub Issues + kanban | yes |
+| **Agent plan + tasks** | steps to fulfil one issue | ephemeral: plan mode + the harness task tools | no (per session) |
+| **Handoff** | when an issue spans sessions | `/we:handoff` (references the issue) | one-shot |
+
+The rule that keeps them apart: *would you show it to a PM on the board? → issue. Is it a step to fulfil an issue? → an agent task that traces to the issue, not a board item.*
+
+Flow: the roadmap/epics break down into issues → each issue gets its own branch → a PR closes it. Agents create and update issues via the GitHub MCP (or `gh`) and never commit to a shared branch; execution steps stay in plan mode, off the board. Adopt the mental model, not a tool — don't add Spec-Kit/Kiro, that's bloat.
+
 ### What goes where
 
 | What | Where | Why |
@@ -85,6 +99,7 @@ No special skills needed. A well-written CLAUDE.md is enough:
 | Code style rules | Linter config | Tool-enforced, not document-enforced |
 | AI instructions | `CLAUDE.md` | Brief, references other files |
 | Project docs | `README.md` | For humans, not for AI |
+| Work items (issues/user stories) | GitHub Issues + kanban | Mutable state; rots in the repo |
 
 ### What NOT to do
 
@@ -93,6 +108,8 @@ No special skills needed. A well-written CLAUDE.md is enough:
 - Don't create a skill for something you do less than 3x per week
 - Don't create ADRs for obvious decisions — only for surprising ones
 - Don't write a 50-page CLAUDE.md — if it needs scroll, it's too long
+- Don't track work as TODO.md/checklists in the repo — use GitHub Issues
+- Don't put agent execution steps on the board — they trace to an issue, they aren't issues
 
 ## Why so few skills?
 
