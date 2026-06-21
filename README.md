@@ -92,6 +92,20 @@ Flow: the roadmap/epics break down into issues → each issue gets its own branc
 
 Issue shape — every issue reads like a spec: **background, goal, acceptance criteria, constraints**. Materialize it as a GitHub issue template (`.github/ISSUE_TEMPLATE/`) so the shape is enforced, not remembered.
 
+### Branch naming — Conventional Branches
+
+Follow [Conventional Branches](https://conventionalbranch.org/) for all new branches. Format: `<type>/<issue>-<kebab-description>`.
+
+| Type | Use |
+|---|---|
+| `feature` | New features |
+| `bugfix` | Bug fixes |
+| `hotfix` | Urgent production fixes |
+| `release` | Release preparation |
+| `chore` | Maintenance, docs, config |
+
+Trunk branch: `main`. Lowercase, hyphens only, no consecutive/trailing hyphens. Include the issue number when one exists (e.g., `feature/42-user-auth`, `bugfix/15-null-check`).
+
 ### What goes where
 
 | What | Where | Why |
