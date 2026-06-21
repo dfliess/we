@@ -73,6 +73,7 @@ Rules for writing CLAUDE.md:
 - Keep architecture rules to principles, not implementation details
 - The "Don't" section captures lessons learned, not obvious things
 - If it needs scroll, it's too long
+- Repo artifacts (code, commits, issues, ADRs, CONTEXT, docs) in English; the human conversation can be in any language
 
 ## CONTEXT.md template
 

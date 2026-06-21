@@ -90,6 +90,8 @@ The rule that keeps them apart: *would you show it to a PM on the board? → iss
 
 Flow: the roadmap/epics break down into issues → each issue gets its own branch → a PR closes it. Agents create and update issues via the GitHub MCP (or `gh`) and never commit to a shared branch; execution steps stay in plan mode, off the board. Adopt the mental model, not a tool — don't add Spec-Kit/Kiro, that's bloat.
 
+Issue shape — every issue reads like a spec: **background, goal, acceptance criteria, constraints**. Materialize it as a GitHub issue template (`.github/ISSUE_TEMPLATE/`) so the shape is enforced, not remembered.
+
 ### What goes where
 
 | What | Where | Why |
@@ -110,6 +112,7 @@ Flow: the roadmap/epics break down into issues → each issue gets its own branc
 - Don't write a 50-page CLAUDE.md — if it needs scroll, it's too long
 - Don't track work as TODO.md/checklists in the repo — use GitHub Issues
 - Don't put agent execution steps on the board — they trace to an issue, they aren't issues
+- Don't mix languages in repo artifacts — code, commits, issues, ADRs, CONTEXT, docs in English; chat in your team's language
 
 ## Why so few skills?
 
