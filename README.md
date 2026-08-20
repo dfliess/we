@@ -61,7 +61,8 @@ This creates:
 ```
 
 The grill session will:
-- Ask you questions one at a time about your design
+- Ask in rounds — every question whose prerequisites are settled, each with a recommended answer, as plain chat text rather than through the option-chip question tool
+- Answer *your* questions back when you'd rather discuss a decision than settle it, then pick the round up where it left off
 - Challenge vague terms ("you said 'account' — do you mean Customer or User?")
 - Cross-reference with existing code to catch contradictions
 - Update CONTEXT.md as terms are resolved
