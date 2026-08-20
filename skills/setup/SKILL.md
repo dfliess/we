@@ -47,6 +47,10 @@ All code must pass `{linter}`. Rules are in `{config file}`. Write compliant cod
 
 Follow [Conventional Commits](https://www.conventionalcommits.org) — `type(scope): summary`. Enforced by commitlint; don't restate the rules here.
 
+## Branches
+
+Follow [Conventional Branches](https://conventionalbranch.org/) — `<type>/<issue>-<kebab-description>`. Types: `feature`, `bugfix`, `hotfix`, `release`, `chore`. Trunk: `main`. Lowercase, hyphens only, no consecutive/trailing hyphens.
+
 ## Domain
 
 Read [CONTEXT.md](./CONTEXT.md) before writing code. Use the terms defined there.
@@ -74,6 +78,7 @@ Rules for writing CLAUDE.md:
 - The "Don't" section captures lessons learned, not obvious things
 - If it needs scroll, it's too long
 - Repo artifacts (code, commits, issues, ADRs, CONTEXT, docs) in English; the human conversation can be in any language
+- The Branches section mirrors Commits: link to the spec, state the types and format, done
 
 ## CONTEXT.md template
 

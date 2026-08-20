@@ -61,7 +61,8 @@ This creates:
 ```
 
 The grill session will:
-- Ask you questions one at a time about your design
+- Ask in rounds — every question whose prerequisites are settled, each with a recommended answer, as plain chat text rather than through the option-chip question tool
+- Answer *your* questions back when you'd rather discuss a decision than settle it, then pick the round up where it left off
 - Challenge vague terms ("you said 'account' — do you mean Customer or User?")
 - Cross-reference with existing code to catch contradictions
 - Update CONTEXT.md as terms are resolved
@@ -91,6 +92,20 @@ The rule that keeps them apart: *would you show it to a PM on the board? → iss
 Flow: the roadmap/epics break down into issues → each issue gets its own branch → a PR closes it. Agents create and update issues via the GitHub MCP (or `gh`) and never commit to a shared branch; execution steps stay in plan mode, off the board. Adopt the mental model, not a tool — don't add Spec-Kit/Kiro, that's bloat.
 
 Issue shape — every issue reads like a spec: **background, goal, acceptance criteria, constraints**. Materialize it as a GitHub issue template (`.github/ISSUE_TEMPLATE/`) so the shape is enforced, not remembered.
+
+### Branch naming — Conventional Branches
+
+Follow [Conventional Branches](https://conventionalbranch.org/) for all new branches. Format: `<type>/<issue>-<kebab-description>`.
+
+| Type | Use |
+|---|---|
+| `feature` | New features |
+| `bugfix` | Bug fixes |
+| `hotfix` | Urgent production fixes |
+| `release` | Release preparation |
+| `chore` | Maintenance, docs, config |
+
+Trunk branch: `main`. Lowercase, hyphens only, no consecutive/trailing hyphens. Include the issue number when one exists (e.g., `feature/42-user-auth`, `bugfix/15-null-check`).
 
 ### What goes where
 
